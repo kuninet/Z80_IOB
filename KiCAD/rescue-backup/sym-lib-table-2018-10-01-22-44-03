@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name Z80-8251-PPI-rescue)(type Legacy)(uri ${KIPRJMOD}/Z80-8251-PPI-rescue.lib)(options "")(descr ""))
+  (lib (name user)(type Legacy)(uri "/Users/kuninet/Library/Mobile Documents/com~apple~CloudDocs/git-work/LIB/user.lib")(options "")(descr ""))
+  (lib (name userlib2)(type Legacy)(uri "/Users/kuninet/Library/Mobile Documents/com~apple~CloudDocs/git-work/LIB/userlib2.lib")(options "")(descr ""))
+)
