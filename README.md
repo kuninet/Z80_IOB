@@ -5,7 +5,7 @@
 ## 概要
 
 - SBC8080ルーズキットバスにつながるI/Oボードです。
-  - Z80 CPUボード(KZ80-CPUB)にもつながります。
+  - [Z80 CPUボード(KZ80-CPUB)](https://github.com/kuninet/Z80_CPUB/wiki)、[SBC8080](https://vintagechips.wordpress.com/2018/06/24/sbc8080-cpu%E3%83%AB%E3%83%BC%E3%82%BA%E3%82%AD%E3%83%83%E3%83%88/)、[SBC8085](https://vintagechips.wordpress.com/2018/08/27/sbc8085%e3%81%8c%e5%ae%8c%e6%88%90/)と組み合わせた稼働を確認しています。
   - 8255パラレルI/O LSIを搭載しています。(Lチカに最適)
   - 8251シリアルチップを搭載しています。
   - 将来 ArduinoコネクタのFM音源シールドを搭載するためのコネクタを装備しています。(これ以外の使いみちはありませんが...)
