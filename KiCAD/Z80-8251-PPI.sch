@@ -552,13 +552,13 @@ Text GLabel 9000 4900 2    60   Input ~ 0
 PA5
 Text GLabel 9000 5000 2    60   Input ~ 0
 PA7
-Text GLabel 8100 5100 0    60   Input ~ 0
+Text GLabel 8100 6050 0    60   Input ~ 0
 PC0
-Text GLabel 8100 5200 0    60   Input ~ 0
+Text GLabel 8100 6150 0    60   Input ~ 0
 PC2
-Text GLabel 9000 5100 2    60   Input ~ 0
+Text GLabel 9000 6050 2    60   Input ~ 0
 PC1
-Text GLabel 9000 5200 2    60   Input ~ 0
+Text GLabel 9000 6150 2    60   Input ~ 0
 PC3
 Text GLabel 8100 5650 0    60   Input ~ 0
 PB0
@@ -568,9 +568,9 @@ Text GLabel 8100 5850 0    60   Input ~ 0
 PB4
 Text GLabel 8100 5950 0    60   Input ~ 0
 PB6
-Text GLabel 8100 6050 0    60   Input ~ 0
+Text GLabel 8100 5100 0    60   Input ~ 0
 PC4
-Text GLabel 8100 6150 0    60   Input ~ 0
+Text GLabel 8100 5200 0    60   Input ~ 0
 PC6
 Text GLabel 9000 5650 2    60   Input ~ 0
 PB1
@@ -580,9 +580,9 @@ Text GLabel 9000 5850 2    60   Input ~ 0
 PB5
 Text GLabel 9000 5950 2    60   Input ~ 0
 PB7
-Text GLabel 9000 6050 2    60   Input ~ 0
+Text GLabel 9000 5100 2    60   Input ~ 0
 PC5
-Text GLabel 9000 6150 2    60   Input ~ 0
+Text GLabel 9000 5200 2    60   Input ~ 0
 PC7
 NoConn ~ 10550 2900
 NoConn ~ 10550 3000
@@ -1675,7 +1675,7 @@ U 1 1 5BBB18E5
 P 9450 4400
 F 0 "Q1" H 9641 4446 50  0000 L CNN
 F 1 "2SC1815" H 9641 4355 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 9650 4325 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 9650 4325 50  0001 L CIN
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf" H 9450 4400 50  0001 L CNN
 	1    9450 4400
 	1    0    0    -1  
@@ -1806,6 +1806,26 @@ Wire Wire Line
 	8750 3900 8750 2800
 Wire Wire Line
 	8750 2800 9400 2800
+$Comp
+L Device:CP C7
+U 1 1 5BD1C8BA
+P 4500 6950
+F 0 "C7" H 4618 6996 50  0000 L CNN
+F 1 "10u" H 4618 6905 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 4538 6800 50  0001 C CNN
+F 3 "~" H 4500 6950 50  0001 C CNN
+	1    4500 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 6700 4500 6700
+Wire Wire Line
+	4500 6700 4500 6800
+Connection ~ 4200 6700
+Wire Wire Line
+	4200 7250 4500 7250
+Wire Wire Line
+	4500 7250 4500 7100
 Wire Bus Line
 	3850 4900 3850 5050
 Wire Bus Line
@@ -1818,4 +1838,5 @@ Wire Bus Line
 	10650 2100 10650 3850
 Wire Bus Line
 	4550 650  4550 5800
+Connection ~ 4200 7250
 $EndSCHEMATC
