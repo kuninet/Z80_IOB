@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Z80 PPI & UART & OPM SOCKET BOARD"
-Date "2018/9/5"
-Rev "1"
+Date "2018-11-18"
+Rev "1.1"
 Comp "KUNI-NET"
 Comment1 ""
 Comment2 ""
@@ -1826,6 +1826,7 @@ Wire Wire Line
 	4200 7250 4500 7250
 Wire Wire Line
 	4500 7250 4500 7100
+Connection ~ 4200 7250
 Wire Bus Line
 	3850 4900 3850 5050
 Wire Bus Line
@@ -1838,5 +1839,4 @@ Wire Bus Line
 	10650 2100 10650 3850
 Wire Bus Line
 	4550 650  4550 5800
-Connection ~ 4200 7250
 $EndSCHEMATC
