@@ -1,5 +1,10 @@
 # Z80 I/Oボード (KZ80-IOB)
 
+詳細は[以下のwiki](https://github.com/kuninet/Z80_IOB/wiki)にまとめます。
+ご覧ください。
+
+https://github.com/kuninet/Z80_IOB/wiki
+
 *☆本ボードは基板を試作して確認中です。参考程度にご覧ください。*
 
 ## 概要
