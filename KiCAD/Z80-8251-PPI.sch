@@ -1,13 +1,12 @@
 EESchema Schematic File Version 4
-LIBS:Z80-8251-PPI-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Z80 PPI & USART & PIC & PIT BOARD"
-Date "2019-03-16"
-Rev "2"
+Date "2020-08-08"
+Rev "3"
 Comp "KUNI-NET"
 Comment1 ""
 Comment2 ""
@@ -40,13 +39,13 @@ Text Label 900  1700 0    60   ~ 0
 A5
 Text Label 900  1600 0    60   ~ 0
 A6
-Text Label 850  2700 0    60   ~ 0
+Text Label 750  2700 0    60   ~ 0
 A7
 Text GLabel 850  1700 0    60   Input ~ 0
 A5
 Text GLabel 850  1600 0    60   Input ~ 0
 A6
-Text GLabel 800  2700 0    60   Input ~ 0
+Text GLabel 700  2700 0    60   Input ~ 0
 A7
 Entry Wire Line
 	4550 5100 4650 5200
@@ -412,7 +411,7 @@ U 1 1 5B907D7D
 P 11000 4050
 F 0 "C2" H 11025 4150 50  0000 L CNN
 F 1 "22p" H 11025 3950 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 11038 3900 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 11038 3900 50  0001 C CNN
 F 3 "" H 11000 4050 50  0001 C CNN
 	1    11000 4050
 	-1   0    0    -1  
@@ -423,7 +422,7 @@ U 1 1 5B907DDF
 P 10800 4050
 F 0 "C1" H 10825 4150 50  0000 L CNN
 F 1 "22p" H 10825 3950 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 10838 3900 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 10838 3900 50  0001 C CNN
 F 3 "" H 10800 4050 50  0001 C CNN
 	1    10800 4050
 	-1   0    0    -1  
@@ -448,7 +447,7 @@ Wire Wire Line
 Wire Wire Line
 	850  1700 1050 1700
 Wire Wire Line
-	800  2700 1000 2700
+	700  2700 850  2700
 Wire Wire Line
 	4650 5600 4850 5600
 Wire Wire Line
@@ -842,7 +841,7 @@ U 1 1 5B911C56
 P 3200 7200
 F 0 "C3" H 3225 7300 50  0000 L CNN
 F 1 "0.1u" H 3225 7100 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 3238 7050 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 3238 7050 50  0001 C CNN
 F 3 "" H 3200 7200 50  0001 C CNN
 	1    3200 7200
 	-1   0    0    -1  
@@ -853,7 +852,7 @@ U 1 1 5B911D6C
 P 3500 7200
 F 0 "C4" H 3525 7300 50  0000 L CNN
 F 1 "0.1u" H 3525 7100 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 3538 7050 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 3538 7050 50  0001 C CNN
 F 3 "" H 3500 7200 50  0001 C CNN
 	1    3500 7200
 	-1   0    0    -1  
@@ -864,7 +863,7 @@ U 1 1 5B911DC8
 P 3800 7200
 F 0 "C5" H 3825 7300 50  0000 L CNN
 F 1 "0.1u" H 3825 7100 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 3838 7050 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 3838 7050 50  0001 C CNN
 F 3 "" H 3800 7200 50  0001 C CNN
 	1    3800 7200
 	-1   0    0    -1  
@@ -875,7 +874,7 @@ U 1 1 5B911E24
 P 4100 7200
 F 0 "C6" H 4125 7300 50  0000 L CNN
 F 1 "0.1u" H 4125 7100 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 4138 7050 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 4138 7050 50  0001 C CNN
 F 3 "" H 4100 7200 50  0001 C CNN
 	1    4100 7200
 	-1   0    0    -1  
@@ -1115,12 +1114,12 @@ A7
 $Comp
 L Device:R_US R2
 U 1 1 5CC9168A
-P 1150 2700
-F 0 "R2" V 1050 2700 50  0000 C CNN
-F 1 "100k" V 1250 2700 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1190 2690 50  0001 C CNN
-F 3 "~" H 1150 2700 50  0001 C CNN
-	1    1150 2700
+P 1050 2700
+F 0 "R2" V 950 2700 50  0000 C CNN
+F 1 "100k" V 1150 2700 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1090 2690 50  0001 C CNN
+F 3 "~" H 1050 2700 50  0001 C CNN
+	1    1050 2700
 	0    1    1    0   
 $EndComp
 $Comp
@@ -1191,7 +1190,7 @@ Wire Wire Line
 Text Label 2750 2450 0    60   ~ 0
 A7
 Wire Wire Line
-	1300 2700 1350 2700
+	1200 2700 1300 2700
 $Comp
 L Z80-8251-PPI-rescue:GND #PWR02
 U 1 1 5CD434A3
@@ -1206,7 +1205,7 @@ $EndComp
 Wire Wire Line
 	1650 2900 1650 2950
 $Comp
-L Interface:8259 U5
+L Z80-8251-PPI-rescue:8259-Interface U5
 U 1 1 5CE4E14E
 P 2500 4000
 F 0 "U5" H 2150 5000 50  0000 C CNN
@@ -1608,7 +1607,7 @@ Wire Wire Line
 Wire Wire Line
 	9350 2000 9450 2000
 Wire Wire Line
-	9200 1750 9450 1750
+	9200 1750 9400 1750
 Wire Wire Line
 	8600 700  9900 700 
 Wire Wire Line
@@ -1628,16 +1627,14 @@ Wire Wire Line
 	9900 1750 9900 2000
 Wire Wire Line
 	7650 2450 8000 2450
-Text GLabel 9950 1350 2    60   Input ~ 0
+Text GLabel 10250 950  2    60   Input ~ 0
 8254-1
-Text GLabel 9950 1850 2    60   Input ~ 0
+Text GLabel 10650 1550 2    60   Input ~ 0
 8254-2
 Wire Wire Line
-	9200 1850 9950 1850
+	9200 2350 10150 2350
 Wire Wire Line
-	9200 2350 9950 2350
-Wire Wire Line
-	9200 1350 9950 1350
+	9200 1350 10000 1350
 $Comp
 L Z80-8251-PPI-rescue:74HC4060 U4
 U 1 1 5B907C08
@@ -1725,17 +1722,6 @@ Connection ~ 6250 3000
 Wire Wire Line
 	9300 3100 9150 3100
 $Comp
-L Jumper:Jumper_3_Open JP2
-U 1 1 5D8086FF
-P 7050 2850
-F 0 "JP2" H 6950 2750 50  0000 C CNN
-F 1 "VCC_JP" H 7050 3000 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 7050 2850 50  0001 C CNN
-F 3 "~" H 7050 2850 50  0001 C CNN
-	1    7050 2850
-	1    0    0    1   
-$EndComp
-$Comp
 L Z80-8251-PPI-rescue:VCC #PWR020
 U 1 1 5D808DD1
 P 7050 2600
@@ -1747,20 +1733,16 @@ F 3 "" H 7050 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7050 2600 7050 2700
-Wire Wire Line
 	6700 1450 6650 1450
 Wire Wire Line
 	6650 1450 6650 2850
-Wire Wire Line
-	6650 2850 6800 2850
 $Comp
 L Z80-8251-PPI-rescue:C C8
 U 1 1 5D8D7872
 P 4400 7200
 F 0 "C8" H 4425 7300 50  0000 L CNN
 F 1 "0.1u" H 4425 7100 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 4438 7050 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 4438 7050 50  0001 C CNN
 F 3 "" H 4400 7200 50  0001 C CNN
 	1    4400 7200
 	-1   0    0    -1  
@@ -1771,7 +1753,7 @@ U 1 1 5D8D78C7
 P 4700 7200
 F 0 "C9" H 4725 7300 50  0000 L CNN
 F 1 "0.1u" H 4725 7100 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 4738 7050 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 4738 7050 50  0001 C CNN
 F 3 "" H 4700 7200 50  0001 C CNN
 	1    4700 7200
 	-1   0    0    -1  
@@ -1861,17 +1843,9 @@ Text Label 1250 800  0    60   ~ 0
 A4
 Text Label 1250 900  0    60   ~ 0
 A3
-Text GLabel 1600 5250 2    60   Input ~ 0
-SBC5V
 Wire Wire Line
-	1600 5250 1450 5250
-Wire Wire Line
-	1450 5250 1450 5500
+	1450 5400 1450 5500
 Connection ~ 1450 5500
-Text GLabel 7500 2850 2    60   Input ~ 0
-SBC5V
-Wire Wire Line
-	7300 2850 7500 2850
 Entry Wire Line
 	3750 3600 3850 3500
 Text Label 3150 3600 0    60   ~ 0
@@ -1896,29 +1870,262 @@ $EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J8
 U 1 1 5CBB2A28
-P 10150 2350
-F 0 "J8" H 10230 2342 50  0000 L CNN
-F 1 "SP JP" H 10000 2150 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal" H 10150 2350 50  0001 C CNN
-F 3 "~" H 10150 2350 50  0001 C CNN
-	1    10150 2350
+P 11000 2350
+F 0 "J8" H 11080 2342 50  0000 L CNN
+F 1 "SP JP" H 10850 2150 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal" H 11000 2350 50  0001 C CNN
+F 3 "~" H 11000 2350 50  0001 C CNN
+	1    11000 2350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Z80-8251-PPI-rescue:GND #PWR09
 U 1 1 5CBB2B8C
-P 9800 2550
-F 0 "#PWR09" H 9800 2300 50  0001 C CNN
-F 1 "GND" H 9800 2400 50  0000 C CNN
-F 2 "" H 9800 2550 50  0001 C CNN
-F 3 "" H 9800 2550 50  0001 C CNN
-	1    9800 2550
+P 10650 2550
+F 0 "#PWR09" H 10650 2300 50  0001 C CNN
+F 1 "GND" H 10650 2400 50  0000 C CNN
+F 2 "" H 10650 2550 50  0001 C CNN
+F 3 "" H 10650 2550 50  0001 C CNN
+	1    10650 2550
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	9800 2550 9800 2450
+	10650 2550 10650 2450
 Wire Wire Line
-	9800 2450 9950 2450
+	10650 2450 10800 2450
+Text Notes 7000 1300 0    60   ~ 0
+GND
+Text Notes 7000 1400 0    60   ~ 0
+CTS
+Text Notes 7000 1500 0    60   ~ 0
++5V
+Text Notes 7000 1600 0    60   ~ 0
+TxD
+Text Notes 7000 1700 0    60   ~ 0
+RxD
+Text Notes 7000 1800 0    60   ~ 0
+RTS
+Wire Wire Line
+	10150 1150 10150 950 
+Wire Wire Line
+	10150 950  10250 950 
+Connection ~ 10150 2350
+Wire Wire Line
+	10150 2350 10350 2350
+Wire Wire Line
+	10350 2050 10350 2350
+Connection ~ 10350 2350
+Wire Wire Line
+	10350 2350 10800 2350
+Wire Wire Line
+	10350 1650 10350 1550
+Wire Wire Line
+	10350 1550 10650 1550
+$Comp
+L Z80-8251-PPI-rescue:VCC #PWR0101
+U 1 1 5F482442
+P 1450 5400
+F 0 "#PWR0101" H 1450 5250 50  0001 C CNN
+F 1 "VCC" H 1450 5550 50  0000 C CNN
+F 2 "" H 1450 5400 50  0001 C CNN
+F 3 "" H 1450 5400 50  0001 C CNN
+	1    1450 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Z80-8251-PPI-rescue:VCC #PWR0102
+U 1 1 5F4A7652
+P 6350 7200
+F 0 "#PWR0102" H 6350 7050 50  0001 C CNN
+F 1 "VCC" H 6350 7350 50  0000 C CNN
+F 2 "" H 6350 7200 50  0001 C CNN
+F 3 "" H 6350 7200 50  0001 C CNN
+	1    6350 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Z80-8251-PPI-rescue:GND #PWR0103
+U 1 1 5F4A7BDB
+P 6650 7300
+F 0 "#PWR0103" H 6650 7050 50  0001 C CNN
+F 1 "GND" H 6650 7150 50  0000 C CNN
+F 2 "" H 6650 7300 50  0001 C CNN
+F 3 "" H 6650 7300 50  0001 C CNN
+	1    6650 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 5F4A8602
+P 6650 7200
+F 0 "#FLG0102" H 6650 7275 50  0001 C CNN
+F 1 "PWR_FLAG" H 6650 7373 50  0000 C CNN
+F 2 "" H 6650 7200 50  0001 C CNN
+F 3 "~" H 6650 7200 50  0001 C CNN
+	1    6650 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0103
+U 1 1 5F4A87EF
+P 6350 7300
+F 0 "#FLG0103" H 6350 7375 50  0001 C CNN
+F 1 "PWR_FLAG" H 6350 7473 50  0000 C CNN
+F 2 "" H 6350 7300 50  0001 C CNN
+F 3 "~" H 6350 7300 50  0001 C CNN
+	1    6350 7300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6350 7200 6350 7300
+Wire Wire Line
+	6650 7200 6650 7300
+$Comp
+L Device:C_Small C10
+U 1 1 5F4F4736
+P 1050 3000
+F 0 "C10" V 1000 2900 50  0000 C CNN
+F 1 "22p" V 1100 3100 50  0000 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 1050 3000 50  0001 C CNN
+F 3 "~" H 1050 3000 50  0001 C CNN
+	1    1050 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	950  3000 850  3000
+Wire Wire Line
+	850  3000 850  2700
+Connection ~ 850  2700
+Wire Wire Line
+	850  2700 900  2700
+Wire Wire Line
+	1300 2700 1300 3000
+Wire Wire Line
+	1300 3000 1150 3000
+Connection ~ 1300 2700
+Wire Wire Line
+	1300 2700 1350 2700
+$Comp
+L Jumper:SolderJumper_2_Open JP2
+U 1 1 5F58D8D7
+P 6850 2850
+F 0 "JP2" H 6850 3055 50  0000 C CNN
+F 1 "USB POWER" H 6850 2750 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6850 2850 50  0001 C CNN
+F 3 "~" H 6850 2850 50  0001 C CNN
+	1    6850 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 2850 6700 2850
+Wire Wire Line
+	7050 2600 7050 2850
+Wire Wire Line
+	7050 2850 7000 2850
+Text GLabel 9600 850  2    60   Input ~ 0
+G0
+Text GLabel 9600 1000 2    60   Input ~ 0
+G1
+Text GLabel 9600 2250 2    60   Input ~ 0
+G2
+Wire Wire Line
+	9600 850  9350 850 
+Wire Wire Line
+	9350 850  9350 1250
+Connection ~ 9350 1250
+Wire Wire Line
+	9600 1000 9400 1000
+Wire Wire Line
+	9400 1000 9400 1750
+Connection ~ 9400 1750
+Wire Wire Line
+	9400 1750 9450 1750
+Wire Wire Line
+	9350 2250 9600 2250
+Connection ~ 9350 2250
+Text GLabel 7950 2750 2    60   Input ~ 0
+G0
+Text GLabel 7950 3000 2    60   Input ~ 0
+G1
+Text GLabel 7950 3250 2    60   Input ~ 0
+G2
+Text GLabel 7450 2750 0    60   Input ~ 0
+PC4
+Text GLabel 7450 3000 0    60   Input ~ 0
+PC5
+Text GLabel 7450 3250 0    60   Input ~ 0
+PC6
+$Comp
+L Jumper:SolderJumper_2_Open JP3
+U 1 1 5F6A4F90
+P 7700 2750
+F 0 "JP3" H 7550 2850 50  0000 C CNN
+F 1 "G0 JP" H 7850 2850 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 7700 2750 50  0001 C CNN
+F 3 "~" H 7700 2750 50  0001 C CNN
+	1    7700 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP4
+U 1 1 5F6F653F
+P 7700 3000
+F 0 "JP4" H 7550 3100 50  0000 C CNN
+F 1 "G1 JP" H 7850 3100 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 7700 3000 50  0001 C CNN
+F 3 "~" H 7700 3000 50  0001 C CNN
+	1    7700 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP5
+U 1 1 5F6F6A1D
+P 7700 3250
+F 0 "JP5" H 7550 3350 50  0000 C CNN
+F 1 "G2 JP" H 7850 3350 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 7700 3250 50  0001 C CNN
+F 3 "~" H 7700 3250 50  0001 C CNN
+	1    7700 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 2750 7550 2750
+Wire Wire Line
+	7850 2750 7950 2750
+Wire Wire Line
+	7450 3000 7550 3000
+Wire Wire Line
+	7450 3250 7550 3250
+Wire Wire Line
+	7850 3000 7950 3000
+Wire Wire Line
+	7850 3250 7950 3250
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP6
+U 1 1 5F82E67C
+P 10150 1350
+F 0 "JP6" V 10196 1418 50  0000 L CNN
+F 1 "8254-1JP" V 10105 1418 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 10150 1350 50  0001 C CNN
+F 3 "~" H 10150 1350 50  0001 C CNN
+	1    10150 1350
+	0    1    -1   0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP7
+U 1 1 5F92AED3
+P 10350 1850
+F 0 "JP7" V 10396 1918 50  0000 L CNN
+F 1 "8254-1JP" V 10305 1918 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 10350 1850 50  0001 C CNN
+F 3 "~" H 10350 1850 50  0001 C CNN
+	1    10350 1850
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	10150 1550 10150 2350
+Wire Wire Line
+	10200 1850 9200 1850
 Wire Bus Line
 	3850 4900 3850 5050
 Wire Bus Line
@@ -1932,21 +2139,9 @@ Wire Bus Line
 Wire Bus Line
 	3650 1350 3650 1900
 Wire Bus Line
-	1650 3300 1650 5050
-Wire Bus Line
 	7700 800  7700 1650
 Wire Bus Line
+	1650 3300 1650 5050
+Wire Bus Line
 	4550 650  4550 5800
-Text Notes 7000 1300 0    60   ~ 0
-GND
-Text Notes 7000 1400 0    60   ~ 0
-CTS
-Text Notes 7000 1500 0    60   ~ 0
-+5V
-Text Notes 7000 1600 0    60   ~ 0
-TxD
-Text Notes 7000 1700 0    60   ~ 0
-RxD
-Text Notes 7000 1800 0    60   ~ 0
-RTS
 $EndSCHEMATC
