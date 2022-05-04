@@ -1,0 +1,194 @@
+ AS V1.42 Beta [Bld 211] - Source File led-blink.asm - Page 1 - 05/04/22 20:39:10
+
+
+       1/       0 :                     ;
+       2/       0 :                     ; LEDブリンクプログラム for KZ80-IOB
+       3/       0 :                     ;
+       4/       0 :                         CPU Z80
+       5/       0 :                     
+       6/       0 : =0C0H                PPI_A   EQU 0C0h
+       7/       0 : =0C1H                PPI_B   EQU 0C1h
+       8/       0 : =0C2H                PPI_C   EQU 0C2h
+       9/       0 : =0C3H                PPI_CTL   EQU 0C3h
+      10/       0 :                     
+      11/    9000 :                         org 9000h
+      12/    9000 :                     
+      13/    9000 :                     START:
+      14/    9000 : CD 07 90                call ppi_init
+      15/    9003 : CD 0C 90                call ppi_blink
+      16/    9006 : C9                      ret
+      17/    9007 :                     
+      18/    9007 :                     ;--------------------
+      19/    9007 :                     ; 8255初期化
+      20/    9007 :                     ;--------------------
+      21/    9007 :                     ppi_init:
+      22/    9007 : 3E 80                   LD  A,080h      ; PPI ALL output
+      23/    9009 : D3 C3                   OUT (PPI_CTL),A
+      24/    900B : C9                      ret
+      25/    900C :                     
+      26/    900C :                     ;---------------------
+      27/    900C :                     ; LED点滅
+      28/    900C :                     ;---------------------
+      29/    900C :                     ppi_blink:
+      30/    900C : 0E 0A                   LD  C,all_loop_cnt
+      31/    900E :                     .all_loop
+      32/    900E : 21 51 90                LD  HL,DATA
+      33/    9011 : 06 18                   LD  B,data_cnt
+      34/    9013 :                     .loop
+      35/    9013 : CD 29 90                call LED_BLINK
+      36/    9016 :                     ;
+      37/    9016 : CD 43 90                call WAIT
+      38/    9019 : 10 F8                   DJNZ    .loop
+      39/    901B :                     ;
+      40/    901B : 06 18                   LD  B,data_cnt
+      41/    901D :                     .loop2
+      42/    901D : CD 36 90                call LED_BACK_BLINK
+      43/    9020 :                     ;
+      44/    9020 : CD 43 90                call WAIT
+      45/    9023 : 10 F8                   DJNZ    .loop2
+      46/    9025 :                     ;
+      47/    9025 : 0D                      DEC C
+      48/    9026 : 20 E6                   JR NZ,.all_loop
+      49/    9028 :                     ;
+      50/    9028 : C9                      ret
+      51/    9029 :                     
+      52/    9029 :                     LED_BLINK:
+      53/    9029 : 7E                      LD  A,(HL)
+      54/    902A : D3 C2                   OUT (PPI_C),A
+      55/    902C : 23                      INC HL
+      56/    902D :                     ;
+      57/    902D : 7E                      LD  A,(HL)
+      58/    902E : D3 C1                   OUT (PPI_B),A
+      59/    9030 : 23                      INC HL
+      60/    9031 :                     ;
+ AS V1.42 Beta [Bld 211] - Source File led-blink.asm - Page 2 - 05/04/22 20:39:10
+
+
+      61/    9031 : 7E                      LD  A,(HL)
+      62/    9032 : D3 C0                   OUT (PPI_A),A
+      63/    9034 : 23                      INC HL
+      64/    9035 :                     ;
+      65/    9035 : C9                      RET
+      66/    9036 :                     ;
+      67/    9036 :                     LED_BACK_BLINK:
+      68/    9036 : 2B                      DEC HL
+      69/    9037 : 7E                      LD  A,(HL)
+      70/    9038 : D3 C0                   OUT (PPI_A),A
+      71/    903A :                     ;
+      72/    903A : 2B                      DEC HL
+      73/    903B : 7E                      LD  A,(HL)
+      74/    903C : D3 C1                   OUT (PPI_B),A
+      75/    903E :                     ;
+      76/    903E : 2B                      DEC HL
+      77/    903F : 7E                      LD  A,(HL)
+      78/    9040 : D3 C2                   OUT (PPI_C),A
+      79/    9042 :                     ;
+      80/    9042 : C9                      RET
+      81/    9043 :                     
+      82/    9043 :                     ;--------------------
+      83/    9043 :                     ; WAIT
+      84/    9043 :                     ;--------------------
+      85/    9043 :                     WAIT:
+      86/    9043 : C5                      PUSH BC
+      87/    9044 : 0E 64                   LD C,100
+      88/    9046 :                     .loop2
+      89/    9046 : 06 64                   LD B,100
+      90/    9048 :                     .loop1
+      91/    9048 : 05                      DEC B
+      92/    9049 : 00                      NOP
+      93/    904A : 20 FC                   JR NZ,.loop1
+      94/    904C :                     ;
+      95/    904C : 0D                      DEC C
+      96/    904D : 20 F7                   JR NZ,.loop2
+      97/    904F :                     ;
+      98/    904F : C1                      POP BC
+      99/    9050 : C9                      RET
+     100/    9051 :                     
+     101/    9051 :                     ; DATA
+     102/    9051 :                     DATA:
+     103/    9051 : 00 00 01                DB  00000000b,00000000b,00000001b
+     104/    9054 : 00 00 02                DB  00000000b,00000000b,00000010b
+     105/    9057 : 00 00 04                DB  00000000b,00000000b,00000100b
+     106/    905A : 00 00 08                DB  00000000b,00000000b,00001000b
+     107/    905D : 00 00 10                DB  00000000b,00000000b,00010000b
+     108/    9060 : 00 00 20                DB  00000000b,00000000b,00100000b
+     109/    9063 : 00 00 40                DB  00000000b,00000000b,01000000b
+     110/    9066 : 00 00 80                DB  00000000b,00000000b,10000000b
+     111/    9069 : 00 01 00                DB  00000000b,00000001b,00000000b
+     112/    906C : 00 02 00                DB  00000000b,00000010b,00000000b
+     113/    906F : 00 04 00                DB  00000000b,00000100b,00000000b
+     114/    9072 : 00 08 00                DB  00000000b,00001000b,00000000b
+     115/    9075 : 00 10 00                DB  00000000b,00010000b,00000000b
+     116/    9078 : 00 20 00                DB  00000000b,00100000b,00000000b
+     117/    907B : 00 40 00                DB  00000000b,01000000b,00000000b
+     118/    907E : 00 80 00                DB  00000000b,10000000b,00000000b
+     119/    9081 : 01 00 00                DB  00000001b,00000000b,00000000b
+     120/    9084 : 02 00 00                DB  00000010b,00000000b,00000000b
+ AS V1.42 Beta [Bld 211] - Source File led-blink.asm - Page 3 - 05/04/22 20:39:10
+
+
+     121/    9087 : 04 00 00                DB  00000100b,00000000b,00000000b
+     122/    908A : 08 00 00                DB  00001000b,00000000b,00000000b
+     123/    908D : 10 00 00                DB  00010000b,00000000b,00000000b
+     124/    9090 : 20 00 00                DB  00100000b,00000000b,00000000b
+     125/    9093 : 40 00 00                DB  01000000b,00000000b,00000000b
+     126/    9096 : 80 00 00                DB  10000000b,00000000b,00000000b
+     127/    9099 :                     
+     128/    9099 :                     ;
+     129/    9099 : =9099H               DATA_END    EQU $
+     130/    9099 : =18H                 data_cnt    EQU (DATA_END-DATA)/3
+     131/    9099 : =0AH                 all_loop_cnt    EQU 10
+     132/    9099 :                     :
+     133/    9099 :                         END
+ AS V1.42 Beta [Bld 211] - Source File led-blink.asm() - Page 4 - 05/04/22 20:39:10
+
+
+  Symbol Table (* = unused):
+  --------------------------
+
+ ALL_LOOP_CNT :                  0A - |
+*ARCHITECTURE :                                      "x86_64-unknown-linux" - |
+*BIGENDIAN :                      0 - | *BRANCHEXT :                      0 - |
+*CASESENSITIVE :                  0 - | *COMPMODE :                       0 - |
+*CONSTPI :        3.141592653589793 - | *CUSTOM :                         0 - |
+ DATA :                        9051 C |  DATA_CNT :                      18 - |
+ DATA_END :                    9099 - | *DATE :                  "05/04/22" - |
+*FALSE :                          0 - | *FULLPMMU :                       1 - |
+*HAS64 :                          1 - | *HASDSP :                         0 - |
+*HASFPU :                         0 - | *HASPMMU :                        0 - |
+*INEXTMODE :                      0 - | *INLWORDMODE :                    0 - |
+*INMAXMODE :                      0 - | *INSRCMODE :                      0 - |
+*INSUPMODE :                      0 - |  LED_BACK_BLINK :              9036 C |
+ LED_BLINK :                   9029 C | *LISTON :                         1 - |
+*MACEXP :                         7 - | *MOMCPU :                        80 - |
+*MOMCPUNAME :                 "Z80" - | *NESTMAX :                      100 - |
+*PACKING :                        0 - | *PADDING :                        1 - |
+ PPI_A :                        0C0 - |  PPI_B :                        0C1 - |
+ PPI_BLINK :                   900C C |  PPI_BLINK.ALL_LOOP :          900E C |
+ PPI_BLINK.LOOP :              9013 C |  PPI_BLINK.LOOP2 :             901D C |
+ PPI_C :                        0C2 - |  PPI_CTL :                      0C3 - |
+ PPI_INIT :                    9007 C | *RELAXED :                        0 - |
+*START :                       9000 C | *TIME :                  "20:39:10" - |
+*TRUE :                           1 - | *VERSION :                     142F - |
+ WAIT :                        9043 C |  WAIT.LOOP1 :                  9048 C |
+ WAIT.LOOP2 :                  9046 C | *Z80SYNTAX :                      0 - |
+
+     50 symbols
+     32 unused symbols
+
+ AS V1.42 Beta [Bld 211] - Source File led-blink.asm() - Page 5 - 05/04/22 20:39:10
+
+
+  Code Pages:
+  ----------
+
+STANDARD (0 changed characters)
+
+1 code page
+
+0.00 seconds assembly time
+
+    133 lines source file
+      2 passes
+      0 errors
+      0 warnings
